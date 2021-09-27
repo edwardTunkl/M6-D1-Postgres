@@ -20,3 +20,28 @@ CREATE TABLE
 		updated_at TIMESTAMPTZ DEFAULT NOW(),
 		published_at TIMESTAMPTZ DEFAULT NOW()
 		)
+
+
+INSERT INTO public.authors(
+name,
+last_name,
+birth_year,
+country)
+VALUES(
+'Dame Agatha Mary Clarissa',
+'Christie',
+1890,
+'England');
+
+INSERT INTO public.books(
+	name,
+	category,
+	cover,
+	author_id
+)
+Values(
+'Along Came a Spider',
+'Crime',
+'https://img.thriftbooks.com/api/images/i/m/9257483BA08B3CE3891E56A488F7356C330378B6.jpg',
+	8
+)
