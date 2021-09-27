@@ -54,3 +54,13 @@ UPDATE public.books SET cover="newimagesource.abc" WHERE book_id=2 RETURNING *;
 SELECT * FROM public.books WHERE category='Crime'
 
 SELECT * FROM public.books WHERE name LIKE 'T%'
+
+SELECT * FROM public.books WHERE name LIKE '%the%'
+
+//---gevin everyone of those authors is still alive....
+
+SELECT 2021-birth_year<=60 from public.authors 
+
+SELECT 2021-birth_year>=40 from public.authors 
+
+SELECT COUNT (*) FROM public.books
