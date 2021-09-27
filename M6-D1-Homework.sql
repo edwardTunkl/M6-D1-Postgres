@@ -45,3 +45,12 @@ Values(
 'https://img.thriftbooks.com/api/images/i/m/9257483BA08B3CE3891E56A488F7356C330378B6.jpg',
 	8
 )
+
+
+UPDATE public.authors SET birth_year=1895 WHERE author_id=2 RETURNING *;
+
+UPDATE public.books SET cover="newimagesource.abc" WHERE book_id=2 RETURNING *;
+
+SELECT * FROM public.books WHERE category='Crime'
+
+SELECT * FROM public.books WHERE name LIKE 'T%'
