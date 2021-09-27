@@ -1,0 +1,22 @@
+CREATE TABLE 
+	IF NOT EXISTS 
+		public.authors(
+		author_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+			name VARCHAR(50) NOT NULL,
+			last_name VARCHAR (50) NOT NULL,
+			birth_year INTEGER NOT NULL,
+			country VARCHAR(50) NOT NULL
+		)
+
+CREATE TABLE 
+	IF NOT EXISTS 
+		public.books(
+		book_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+		name VARCHAR(150) NOT NULL,
+		category VARCHAR (50) NOT NULL,
+		cover TEXT NOT NULL,
+		author_id INTEGER REFERENCES authors(author_id),
+		created_at TIMESTAMP DEFAULT NOW(),
+		updated_at TIMESTAMPTZ DEFAULT NOW(),
+		published_at TIMESTAMPTZ DEFAULT NOW()
+		)
